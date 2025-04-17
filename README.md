@@ -5,5 +5,6 @@ Este projeto foi desenvolvido como parte do curso de **Desenvolvimento de Sistem
 ## Funcionalidades
 
 - **Cadastro de EPIs**: Adiciona diferentes tipos de EPIs, como máscara, luvas de segurança, capacete, botas, colete de segurança e óculos de proteção, com datas de validade específicas.
+- - **Troca de EPI**: Trocar uma EPI com base em algum motivo, como novas luvas de segurança, motivo da troca expirado.
 - **Exibição de EPIs**: Mostra os EPIs cadastrados em formato de tabela, com informações como código, nome, data de criação e data de expiração.
 - **Registro de horário de entrada (Clock-in)**: Simula o registro de horário de entrada de um trabalhador, permitindo marcar o momento em que ele começa seu turno.
