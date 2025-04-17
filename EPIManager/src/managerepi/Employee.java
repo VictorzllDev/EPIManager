@@ -14,24 +14,22 @@ public abstract class Employee {
         this.name = name;
     }
 
-    private String generateRegistrationId() {
-        int epiCount = this.listEpi.size();
-        String registrationId = String.format("EPI%03d", epiCount + 1);  // Gera o ID, começando de EPI001
-        return registrationId;
-    }
 
-    public void addEpi(String name, int daysUntilExpiration) {
-        // calcula a data de validade
-        LocalDate expirationDate = LocalDate.now().plusDays(daysUntilExpiration);
-        String registration = generateRegistrationId();
-
-        Epi newEpi = new Epi(name, registration, LocalDate.now(), expirationDate);
-
-        this.listEpi.add(newEpi);
+    public void addEpi(Epi epi) {
+        this.listEpi.add(epi);
     }
 
     public List<Epi> getAllEpi() {
         return this.listEpi;
     }
 
+    public void updateEpi(String epiCode, String name, int daysUntilExpiration, EPIUpdateReason reason){
+        for (Epi epi : listEpi) {
+            if (epi.code.equals(epiCode)) {
+                epi.update(name, daysUntilExpiration);
+                System.out.println("EPI: " + epiCode + " Atualizado, MOTIVO: "+ reason);
+                return;
+            }
+        }
+    }
 }
